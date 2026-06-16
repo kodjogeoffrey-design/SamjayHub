@@ -144,68 +144,64 @@
 
   <script src="js/app.js"></script>
   <script>
-    // Get category from URL
-    const params = new URLSearchParams(window.location.search);
-    let currentCategory = params.get('category') || 'all';
-    if (!categories.some(c => c.id === currentCategory)) currentCategory = 'all';
+    window.addEventListener('dataLoaded', function() {
+      const params = new URLSearchParams(window.location.search);
+      let currentCategory = params.get('category') || 'all';
+      if (!categories.some(c => c.id === currentCategory)) currentCategory = 'all';
 
-    // SVG icons for filter buttons
-    const filterIcons = {
-      all: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>',
-      cosmetics: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M9 3h6v4H9z"/><path d="M12 7v14"/><path d="M8 21h8"/><path d="M6 3h12"/></svg>',
-      fashion: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M6 2l-4 6h4v14h12V8h4l-4-6h-4l-2 3-2-3H6z"/></svg>',
-      rabbits: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M13 16h-2v-2h2v2z"/><path d="M13 12c0-3 2-6 2-6s2 3 2 6a2 2 0 11-4 0z"/><path d="M9 12c0-3 2-6 2-6s2 3 2 6a2 2 0 11-4 0z"/><circle cx="12" cy="14" r="4"/></svg>',
-      homecare: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>',
-    };
+      const filterIcons = {
+        all: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>',
+        cosmetics: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M9 3h6v4H9z"/><path d="M12 7v14"/><path d="M8 21h8"/><path d="M6 3h12"/></svg>',
+        fashion: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M6 2l-4 6h4v14h12V8h4l-4-6h-4l-2 3-2-3H6z"/></svg>',
+        rabbits: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M13 16h-2v-2h2v2z"/><path d="M13 12c0-3 2-6 2-6s2 3 2 6a2 2 0 11-4 0z"/><path d="M9 12c0-3 2-6 2-6s2 3 2 6a2 2 0 11-4 0z"/><circle cx="12" cy="14" r="4"/></svg>',
+        homecare: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>',
+      };
 
-    // Render filter buttons
-    function renderFilters() {
-      document.getElementById('filter-bar').innerHTML = categories.map(c =>
-        `<button class="filter-btn ${c.id === currentCategory ? 'active' : ''}" data-cat="${c.id}">
-          ${filterIcons[c.id] || ''} ${c.id === 'all' ? 'All' : c.name}
-        </button>`
-      ).join('');
-
-      document.querySelectorAll('.filter-btn').forEach(btn => {
-        btn.addEventListener('click', function() {
-          currentCategory = this.dataset.cat;
-          renderFilters();
-          renderProducts();
-          const url = new URL(window.location);
-          if (currentCategory === 'all') { url.searchParams.delete('category'); }
-          else { url.searchParams.set('category', currentCategory); }
-          history.replaceState({}, '', url);
+      function renderFilters() {
+        document.getElementById('filter-bar').innerHTML = categories.map(c =>
+          `<button class="filter-btn ${c.id === currentCategory ? 'active' : ''}" data-cat="${c.id}">
+            ${filterIcons[c.id] || ''} ${c.id === 'all' ? 'All' : c.name}
+          </button>`
+        ).join('');
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+          btn.addEventListener('click', function() {
+            currentCategory = this.dataset.cat;
+            renderFilters();
+            renderProducts();
+            const url = new URL(window.location);
+            if (currentCategory === 'all') { url.searchParams.delete('category'); }
+            else { url.searchParams.set('category', currentCategory); }
+            history.replaceState({}, '', url);
+          });
         });
-      });
-    }
-
-    // Render products
-    function renderProducts() {
-      const filtered = currentCategory === 'all' ? products : products.filter(p => p.category === currentCategory);
-      const grid = document.getElementById('products-grid');
-      const noProducts = document.getElementById('no-products');
-      const count = document.getElementById('results-count');
-
-      if (filtered.length > 0) {
-        grid.innerHTML = filtered.map(renderProductCard).join('');
-        grid.style.display = '';
-        noProducts.style.display = 'none';
-        let text = `Showing <strong>${filtered.length}</strong> ${filtered.length === 1 ? 'product' : 'products'}`;
-        if (currentCategory !== 'all') {
-          const cat = categories.find(c => c.id === currentCategory);
-          text += ` in <strong>${cat.name}</strong>`;
-        }
-        count.innerHTML = text;
-      } else {
-        grid.innerHTML = '';
-        grid.style.display = 'none';
-        noProducts.style.display = '';
-        count.innerHTML = '';
       }
-    }
 
-    renderFilters();
-    renderProducts();
+      function renderProducts() {
+        const filtered = currentCategory === 'all' ? products : products.filter(p => p.category === currentCategory);
+        const grid = document.getElementById('products-grid');
+        const noProducts = document.getElementById('no-products');
+        const count = document.getElementById('results-count');
+        if (filtered.length > 0) {
+          grid.innerHTML = filtered.map(renderProductCard).join('');
+          grid.style.display = '';
+          noProducts.style.display = 'none';
+          let text = `Showing <strong>${filtered.length}</strong> ${filtered.length === 1 ? 'product' : 'products'}`;
+          if (currentCategory !== 'all') {
+            const cat = categories.find(c => c.id === currentCategory);
+            text += ` in <strong>${cat.name}</strong>`;
+          }
+          count.innerHTML = text;
+        } else {
+          grid.innerHTML = '';
+          grid.style.display = 'none';
+          noProducts.style.display = '';
+          count.innerHTML = '';
+        }
+      }
+
+      renderFilters();
+      renderProducts();
+    });
   </script>
 </body>
 </html>

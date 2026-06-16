@@ -230,9 +230,10 @@
 
   <script src="js/app.js"></script>
   <script>
-    // Render featured products (those with badges, max 8)
-    document.getElementById('featured-products').innerHTML = 
-      products.filter(p => p.badge).slice(0, 8).map(renderProductCard).join('');
+    window.addEventListener('dataLoaded', function() {
+      document.getElementById('featured-products').innerHTML =
+        products.filter(p => p.badge).slice(0, 8).map(renderProductCard).join('');
+    });
   </script>
 </body>
 </html>
