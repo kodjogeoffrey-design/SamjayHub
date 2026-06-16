@@ -1,0 +1,44 @@
+{
+  "siteName": "SamjayHub",
+  "siteTagline": "Beauty, Fashion & More in Ghana",
+  "whatsapp": {
+    "number": "233207777324",
+    "displayNumber": "+233 207 777 324"
+  },
+  "location": "Ghana",
+  "businessHours": "Monday - Saturday: 8AM - 7PM",
+  "socialMedia": {
+    "tiktok": {
+      "handle": "@sam.jay45",
+      "url": "https://tiktok.com/@sam.jay45"
+    },
+    "instagram": {
+      "handle": "@samjayhub",
+      "url": "https://instagram.com/samjayhub"
+    },
+    "facebook": {
+      "handle": "samjayhub",
+      "url": "https://facebook.com/samjayhub"
+    },
+    "whatsapp": {
+      "url": "https://wa.me/233207777324"
+    }
+  },
+  "categories": [
+    { "id": "all", "name": "All Products" },
+    { "id": "cosmetics", "name": "Cosmetics & Perfumes" },
+    { "id": "fashion", "name": "African Wear" },
+    { "id": "rabbits", "name": "Rabbits" },
+    { "id": "homecare", "name": "Home Care" }
+  ],
+  "badges": [
+    { "id": "", "name": "None" },
+    { "id": "Popular", "name": "Popular" },
+    { "id": "New", "name": "New" },
+    { "id": "Premium", "name": "Premium" },
+    { "id": "Best Seller", "name": "Best Seller" },
+    { "id": "Best Value", "name": "Best Value" },
+    { "id": "Natural", "name": "Natural" },
+    { "id": "Spicy", "name": "Spicy" }
+  ]
+}

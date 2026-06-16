@@ -1,0 +1,632 @@
+[
+  {
+    "id": 1,
+    "name": "Premium Body Cream",
+    "category": "cosmetics",
+    "price": 80,
+    "desc": "Rich moisturizing body cream for soft, glowing skin.",
+    "img": "images/cosmetics/perfume/perfume-01.jpg",
+    "badge": "Popular",
+    "inStock": true
+  },
+  {
+    "id": 2,
+    "name": "Glow Body Lotion",
+    "category": "cosmetics",
+    "price": 65,
+    "desc": "Lightweight, fast-absorbing lotion for all-day hydration.",
+    "img": "images/cosmetics/perfume/perfume-02.jpg",
+    "inStock": true
+  },
+  {
+    "id": 3,
+    "name": "Hair Pomade",
+    "category": "cosmetics",
+    "price": 40,
+    "desc": "Premium hair pomade for smooth, styled hair.",
+    "img": "images/cosmetics/perfume/perfume-03.jpg",
+    "inStock": true
+  },
+  {
+    "id": 4,
+    "name": "Styling Comb Set",
+    "category": "cosmetics",
+    "price": 25,
+    "desc": "Professional-grade comb set for daily hair care.",
+    "img": "images/cosmetics/perfume/perfume-04.jpg",
+    "inStock": true
+  },
+  {
+    "id": 5,
+    "name": "Facial Cream",
+    "category": "cosmetics",
+    "price": 95,
+    "desc": "Advanced facial cream for clear, radiant skin.",
+    "img": "images/cosmetics/perfume/perfume-05.jpg",
+    "badge": "New",
+    "inStock": true
+  },
+  {
+    "id": 6,
+    "name": "Lip Gloss Collection",
+    "category": "cosmetics",
+    "price": 35,
+    "desc": "Shimmering lip gloss in beautiful shades.",
+    "img": "images/cosmetics/perfume/perfume-06.jpg",
+    "inStock": true
+  },
+  {
+    "id": 7,
+    "name": "Aventus 100ml Perfume",
+    "category": "cosmetics",
+    "price": 500,
+    "desc": "Best seller for men. Bold, sophisticated scent.",
+    "img": "images/cosmetics/perfume/perfume-07.jpg",
+    "badge": "Best Seller",
+    "inStock": true
+  },
+  {
+    "id": 8,
+    "name": "Creed Aventus EDP",
+    "category": "cosmetics",
+    "price": 600,
+    "desc": "Premium Eau de Parfum for men. Unmistakable luxury.",
+    "img": "images/cosmetics/perfume/perfume-08.jpg",
+    "badge": "Premium",
+    "inStock": true
+  },
+  {
+    "id": 9,
+    "name": "Signature Men's Perfume",
+    "category": "cosmetics",
+    "price": 350,
+    "desc": "Elegant fragrance with warm, woody undertones.",
+    "img": "images/cosmetics/perfume/perfume-09.jpg",
+    "inStock": true
+  },
+  {
+    "id": 10,
+    "name": "Ocean Breeze Perfume",
+    "category": "cosmetics",
+    "price": 300,
+    "desc": "Fresh aquatic fragrance for everyday wear.",
+    "img": "images/cosmetics/perfume/perfume-10.jpg",
+    "inStock": true
+  },
+  {
+    "id": 11,
+    "name": "Royal Oud Perfume",
+    "category": "cosmetics",
+    "price": 450,
+    "desc": "Rich, exotic oud-based fragrance.",
+    "img": "images/cosmetics/perfume/perfume-11.jpg",
+    "inStock": true
+  },
+  {
+    "id": 12,
+    "name": "Midnight Noir Perfume",
+    "category": "cosmetics",
+    "price": 380,
+    "desc": "Dark evening fragrance with leather and amber.",
+    "img": "images/cosmetics/perfume/perfume-12.jpg",
+    "inStock": true
+  },
+  {
+    "id": 13,
+    "name": "Fresh Citrus Perfume",
+    "category": "cosmetics",
+    "price": 280,
+    "desc": "Zesty citrus with lemon, orange, and bergamot.",
+    "img": "images/cosmetics/perfume/perfume-13.jpg",
+    "inStock": true
+  },
+  {
+    "id": 14,
+    "name": "Velvet Rose Perfume",
+    "category": "cosmetics",
+    "price": 320,
+    "desc": "Luxurious floral with velvet rose and sandalwood.",
+    "img": "images/cosmetics/perfume/perfume-14.jpg",
+    "inStock": true
+  },
+  {
+    "id": 15,
+    "name": "Gold Edition Perfume",
+    "category": "cosmetics",
+    "price": 550,
+    "desc": "Exclusive gold edition. Rich, opulent, unforgettable.",
+    "img": "images/cosmetics/perfume/perfume-15.jpg",
+    "badge": "Premium",
+    "inStock": true
+  },
+  {
+    "id": 16,
+    "name": "Spice Tobacco Perfume",
+    "category": "cosmetics",
+    "price": 400,
+    "desc": "Warm spice and tobacco blend.",
+    "img": "images/cosmetics/perfume/perfume-16.jpg",
+    "inStock": true
+  },
+  {
+    "id": 17,
+    "name": "Safari Adventure Perfume",
+    "category": "cosmetics",
+    "price": 350,
+    "desc": "Earthy scent inspired by the African savannah.",
+    "img": "images/cosmetics/perfume/perfume-17.jpg",
+    "inStock": true
+  },
+  {
+    "id": 18,
+    "name": "Crystal Clear Perfume",
+    "category": "cosmetics",
+    "price": 300,
+    "desc": "Clean, modern, and sophisticated.",
+    "img": "images/cosmetics/perfume/perfume-18.jpg",
+    "inStock": true
+  },
+  {
+    "id": 19,
+    "name": "Empire Perfume",
+    "category": "cosmetics",
+    "price": 420,
+    "desc": "Commanding presence. Bold and lasting.",
+    "img": "images/cosmetics/perfume/perfume-19.jpg",
+    "inStock": true
+  },
+  {
+    "id": 20,
+    "name": "Night Queen Perfume",
+    "category": "cosmetics",
+    "price": 380,
+    "desc": "Dark berries and musk for evening wear.",
+    "img": "images/cosmetics/perfume/perfume-20.jpg",
+    "inStock": true
+  },
+  {
+    "id": 21,
+    "name": "Island Vibes Perfume",
+    "category": "cosmetics",
+    "price": 290,
+    "desc": "Tropical coconut and vanilla paradise.",
+    "img": "images/cosmetics/perfume/perfume-21.jpg",
+    "inStock": true
+  },
+  {
+    "id": 22,
+    "name": "Gentleman's Choice",
+    "category": "cosmetics",
+    "price": 360,
+    "desc": "Classic gentleman's cologne. Timeless elegance.",
+    "img": "images/cosmetics/perfume/perfume-22.jpg",
+    "inStock": true
+  },
+  {
+    "id": 23,
+    "name": "Desert Storm Perfume",
+    "category": "cosmetics",
+    "price": 340,
+    "desc": "Warm amber and sand from the Sahara.",
+    "img": "images/cosmetics/perfume/perfume-23.jpg",
+    "inStock": true
+  },
+  {
+    "id": 24,
+    "name": "Aqua Marine Perfume",
+    "category": "cosmetics",
+    "price": 310,
+    "desc": "Ocean freshness with marine notes.",
+    "img": "images/cosmetics/perfume/perfume-24.jpg",
+    "inStock": true
+  },
+  {
+    "id": 25,
+    "name": "Matelot Fresh Perfume",
+    "category": "cosmetics",
+    "price": 330,
+    "desc": "Clean aquatic fragrance. Light and invigorating.",
+    "img": "images/cosmetics/perfume/perfume-25.jpg",
+    "badge": "Popular",
+    "inStock": true
+  },
+  {
+    "id": 26,
+    "name": "Royal Crown Perfume",
+    "category": "cosmetics",
+    "price": 480,
+    "desc": "Fit for royalty. Leather and oud.",
+    "img": "images/cosmetics/perfume/perfume-26.jpg",
+    "inStock": true
+  },
+  {
+    "id": 27,
+    "name": "Pure Essence Perfume",
+    "category": "cosmetics",
+    "price": 270,
+    "desc": "Minimalist clean musk and white flowers.",
+    "img": "images/cosmetics/perfume/perfume-27.jpg",
+    "inStock": true
+  },
+  {
+    "id": 28,
+    "name": "King's Legacy Perfume",
+    "category": "cosmetics",
+    "price": 520,
+    "desc": "Regal amber, saffron, and cedar.",
+    "img": "images/cosmetics/perfume/perfume-28.jpg",
+    "inStock": true
+  },
+  {
+    "id": 29,
+    "name": "Urban Style Perfume",
+    "category": "cosmetics",
+    "price": 290,
+    "desc": "Modern urban fragrance. Street-smart.",
+    "img": "images/cosmetics/perfume/perfume-29.jpg",
+    "inStock": true
+  },
+  {
+    "id": 30,
+    "name": "African King Perfume",
+    "category": "cosmetics",
+    "price": 400,
+    "desc": "Bold African-inspired fragrance.",
+    "img": "images/cosmetics/perfume/perfume-30.jpg",
+    "badge": "Popular",
+    "inStock": true
+  },
+  {
+    "id": 31,
+    "name": "Silver Mist Perfume",
+    "category": "cosmetics",
+    "price": 320,
+    "desc": "Cool metallic freshness with birch and vetiver.",
+    "img": "images/cosmetics/perfume/perfume-31.jpg",
+    "inStock": true
+  },
+  {
+    "id": 32,
+    "name": "Boss Man Perfume",
+    "category": "cosmetics",
+    "price": 450,
+    "desc": "The boss's signature scent.",
+    "img": "images/cosmetics/perfume/perfume-32.jpg",
+    "inStock": true
+  },
+  {
+    "id": 33,
+    "name": "Cool Breeze Perfume",
+    "category": "cosmetics",
+    "price": 280,
+    "desc": "Refreshing mint and eucalyptus blend.",
+    "img": "images/cosmetics/perfume/perfume-33.jpg",
+    "inStock": true
+  },
+  {
+    "id": 34,
+    "name": "Heritage Perfume",
+    "category": "cosmetics",
+    "price": 370,
+    "desc": "Warm spice, incense, and amber.",
+    "img": "images/cosmetics/perfume/perfume-34.jpg",
+    "inStock": true
+  },
+  {
+    "id": 35,
+    "name": "Sunset Gold Perfume",
+    "category": "cosmetics",
+    "price": 350,
+    "desc": "Golden amber and honey warmth.",
+    "img": "images/cosmetics/perfume/perfume-35.jpg",
+    "inStock": true
+  },
+  {
+    "id": 36,
+    "name": "Thunder Storm Perfume",
+    "category": "cosmetics",
+    "price": 310,
+    "desc": "Electric petrichor, ozone, and dark musk.",
+    "img": "images/cosmetics/perfume/perfume-36.jpg",
+    "inStock": true
+  },
+  {
+    "id": 37,
+    "name": "Classic Noir Perfume",
+    "category": "cosmetics",
+    "price": 390,
+    "desc": "Timeless black tie fragrance.",
+    "img": "images/cosmetics/perfume/perfume-37.jpg",
+    "inStock": true
+  },
+  {
+    "id": 38,
+    "name": "Golden Touch Perfume",
+    "category": "cosmetics",
+    "price": 460,
+    "desc": "Liquid gold. Warm, rich, luxurious.",
+    "img": "images/cosmetics/perfume/perfume-38.jpg",
+    "badge": "Premium",
+    "inStock": true
+  },
+  {
+    "id": 39,
+    "name": "African Pride Perfume",
+    "category": "cosmetics",
+    "price": 340,
+    "desc": "Celebrating African heritage.",
+    "img": "images/cosmetics/perfume/perfume-39.jpg",
+    "inStock": true
+  },
+  {
+    "id": 40,
+    "name": "Transparent Aura Perfume",
+    "category": "cosmetics",
+    "price": 300,
+    "desc": "Light, transparent elegance.",
+    "img": "images/cosmetics/perfume/perfume-40.jpg",
+    "inStock": true
+  },
+  {
+    "id": 41,
+    "name": "Ankara Maxi Dress",
+    "category": "fashion",
+    "price": 350,
+    "desc": "Handcrafted Ankara dress for parties and occasions.",
+    "img": "images/fashion/ankara-dress.jpg",
+    "badge": "Best Seller",
+    "inStock": true
+  },
+  {
+    "id": 42,
+    "name": "Kente Cloth Wrap",
+    "category": "fashion",
+    "price": 500,
+    "desc": "Authentic handwoven Kente. Ghanaian heritage.",
+    "img": "images/fashion/kente-wrap.jpg",
+    "badge": "Premium",
+    "inStock": true
+  },
+  {
+    "id": 43,
+    "name": "Ankara Skirt & Top Set",
+    "category": "fashion",
+    "price": 280,
+    "desc": "Matching set. Trendy, comfortable, African.",
+    "img": "images/fashion/ankara-set.jpg",
+    "inStock": true
+  },
+  {
+    "id": 44,
+    "name": "African Print Clutch Bag",
+    "category": "fashion",
+    "price": 120,
+    "desc": "Stylish African print clutch. Perfect accessory.",
+    "img": "images/fashion/clutch-bag.jpg",
+    "inStock": true
+  },
+  {
+    "id": 45,
+    "name": "Kente Headwrap",
+    "category": "fashion",
+    "price": 80,
+    "desc": "Elegant Kente headwrap. Regal touch.",
+    "img": "images/fashion/kente-headwrap.jpg",
+    "badge": "Popular",
+    "inStock": true
+  },
+  {
+    "id": 46,
+    "name": "Ankara Palazzo Pants",
+    "category": "fashion",
+    "price": 200,
+    "desc": "Wide-leg pants. Comfortable and fashionable.",
+    "img": "images/fashion/ankara-pants.jpg",
+    "inStock": true
+  },
+  {
+    "id": 47,
+    "name": "Live Rabbit (Male)",
+    "category": "rabbits",
+    "price": 180,
+    "desc": "Healthy male rabbit. For breeding or as pet.",
+    "img": "images/rabbits/live/grilled-01.jpg",
+    "inStock": true
+  },
+  {
+    "id": 48,
+    "name": "Live Rabbit (Female)",
+    "category": "rabbits",
+    "price": 200,
+    "desc": "Healthy female rabbit. Ideal for breeding.",
+    "img": "images/rabbits/live/grilled-02.jpg",
+    "inStock": true
+  },
+  {
+    "id": 49,
+    "name": "Live Rabbit Pair",
+    "category": "rabbits",
+    "price": 350,
+    "desc": "Male + female pair. Start your rabbit farm.",
+    "img": "images/rabbits/live/grilled-03.jpg",
+    "badge": "Best Value",
+    "inStock": true
+  },
+  {
+    "id": 50,
+    "name": "Fresh Grilled Rabbit",
+    "category": "rabbits",
+    "price": 250,
+    "desc": "Expertly grilled with special spices.",
+    "img": "images/rabbits/grilled/grilled-16.jpg",
+    "badge": "Popular",
+    "inStock": true
+  },
+  {
+    "id": 51,
+    "name": "Grilled Rabbit (Large)",
+    "category": "rabbits",
+    "price": 300,
+    "desc": "Large grilled rabbit. Great for sharing.",
+    "img": "images/rabbits/grilled/grilled-20.jpg",
+    "inStock": true
+  },
+  {
+    "id": 52,
+    "name": "Grilled Rabbit (Medium)",
+    "category": "rabbits",
+    "price": 250,
+    "desc": "Medium portion. Perfect single serving.",
+    "img": "images/rabbits/grilled/grilled-21.jpg",
+    "inStock": true
+  },
+  {
+    "id": 53,
+    "name": "Grilled Rabbit (Small)",
+    "category": "rabbits",
+    "price": 200,
+    "desc": "Small grilled rabbit. Tender and juicy.",
+    "img": "images/rabbits/grilled/grilled-22.jpg",
+    "inStock": true
+  },
+  {
+    "id": 54,
+    "name": "Spicy Grilled Rabbit",
+    "category": "rabbits",
+    "price": 260,
+    "desc": "Extra spicy for heat lovers.",
+    "img": "images/rabbits/grilled/grilled-24.jpg",
+    "badge": "Spicy",
+    "inStock": true
+  },
+  {
+    "id": 55,
+    "name": "Herb Grilled Rabbit",
+    "category": "rabbits",
+    "price": 270,
+    "desc": "Fresh herbs and seasonings. Aromatic.",
+    "img": "images/rabbits/grilled/grilled-25.jpg",
+    "inStock": true
+  },
+  {
+    "id": 56,
+    "name": "Smoked Grilled Rabbit",
+    "category": "rabbits",
+    "price": 280,
+    "desc": "Slow-smoked. Rich, smoky flavor.",
+    "img": "images/rabbits/grilled/grilled-27.jpg",
+    "badge": "New",
+    "inStock": true
+  },
+  {
+    "id": 57,
+    "name": "Peppered Grilled Rabbit",
+    "category": "rabbits",
+    "price": 260,
+    "desc": "Grilled with pepper sauce. Bold flavor.",
+    "img": "images/rabbits/grilled/grilled-28.jpg",
+    "inStock": true
+  },
+  {
+    "id": 58,
+    "name": "Grilled Rabbit Family Pack",
+    "category": "rabbits",
+    "price": 500,
+    "desc": "Enough for the whole family. Great value!",
+    "img": "images/rabbits/grilled/grilled-29.jpg",
+    "badge": "Best Value",
+    "inStock": true
+  },
+  {
+    "id": 59,
+    "name": "Roasted Rabbit (Whole)",
+    "category": "rabbits",
+    "price": 280,
+    "desc": "Slow-roasted with Ghanaian spices.",
+    "img": "images/rabbits/roasted/grilled-15.jpg",
+    "badge": "Best Seller",
+    "inStock": true
+  },
+  {
+    "id": 60,
+    "name": "Roasted Rabbit (Half)",
+    "category": "rabbits",
+    "price": 160,
+    "desc": "Half roasted rabbit. Juicy and flavorful.",
+    "img": "images/rabbits/roasted/grilled-17.jpg",
+    "inStock": true
+  },
+  {
+    "id": 61,
+    "name": "Rabbit Meat (Per Kilo)",
+    "category": "rabbits",
+    "price": 120,
+    "desc": "Fresh raw rabbit meat per kilogram.",
+    "img": "images/rabbits/grilled/grilled-30.jpg",
+    "inStock": true
+  },
+  {
+    "id": 62,
+    "name": "Rabbit Stew Mix",
+    "category": "rabbits",
+    "price": 150,
+    "desc": "Pre-cut pieces ready for stewing.",
+    "img": "images/rabbits/grilled/grilled-31.jpg",
+    "inStock": true
+  },
+  {
+    "id": 63,
+    "name": "Handmade Black Soap",
+    "category": "homecare",
+    "price": 30,
+    "desc": "Traditional Ghanaian black soap. Natural.",
+    "img": "images/homecare/black-soap.jpg",
+    "badge": "Natural",
+    "inStock": true
+  },
+  {
+    "id": 64,
+    "name": "Toilet Cleaner",
+    "category": "homecare",
+    "price": 25,
+    "desc": "Powerful cleaner. Eliminates germs.",
+    "img": "images/homecare/toilet-cleaner.jpg",
+    "inStock": true
+  },
+  {
+    "id": 65,
+    "name": "Hand Sanitizer (500ml)",
+    "category": "homecare",
+    "price": 35,
+    "desc": "Kills 99.9% of germs. Moisturizing.",
+    "img": "images/homecare/hand-sanitizer.jpg",
+    "inStock": true
+  },
+  {
+    "id": 66,
+    "name": "Dettol Antiseptic",
+    "category": "homecare",
+    "price": 45,
+    "desc": "Trusted Dettol for first aid and cleaning.",
+    "img": "images/homecare/dettol.jpg",
+    "inStock": true
+  },
+  {
+    "id": 67,
+    "name": "Dog Shampoo",
+    "category": "homecare",
+    "price": 40,
+    "desc": "Gentle shampoo. Keeps pet coat shiny.",
+    "img": "images/homecare/dog-shampoo.jpg",
+    "inStock": true
+  },
+  {
+    "id": 68,
+    "name": "Laundry Soap Bar",
+    "category": "homecare",
+    "price": 15,
+    "desc": "Long-lasting. Tough on stains.",
+    "img": "images/homecare/laundry-soap.jpg",
+    "inStock": true
+  }
+]

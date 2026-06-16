@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SamjayHub Admin</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    body { background: #f5f5f0; font-family: 'Inter', sans-serif; margin: 0; padding: 0; }
+    .admin-wrap { max-width: 1200px; margin: 0 auto; padding: 20px; }
+    .admin-header { background: #1A1A2E; color: #fff; padding: 20px 30px; border-radius: 12px; margin-bottom: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+    .admin-header h1 { margin: 0; font-size: 1.5rem; font-family: 'Playfair Display', serif; }
+    .admin-header .back-link { color: #D4AF37; text-decoration: none; font-size: 0.9rem; }
+    .admin-header .back-link:hover { text-decoration: underline; }
+    .tabs { display: flex; gap: 8px; margin-bottom: 24px; flex-wrap: wrap; }
+    .tab-btn { padding: 10px 20px; border: 2px solid #ddd; background: #fff; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 0.9rem; transition: all 0.2s; }
+    .tab-btn.active { background: #1A1A2E; color: #fff; border-color: #1A1A2E; }
+    .tab-btn:hover:not(.active) { border-color: #1A1A2E; }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+    .card { background: #fff; border-radius: 12px; padding: 24px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+    .card h2 { margin: 0 0 16px; font-family: 'Playfair Display', serif; font-size: 1.3rem; color: #1A1A2E; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-group { display: flex; flex-direction: column; gap: 4px; }
+    .form-group.full { grid-column: 1 / -1; }
+    .form-group label { font-weight: 600; font-size: 0.85rem; color: #555; }
+    .form-group input, .form-group select, .form-group textarea { padding: 10px 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 0.95rem; font-family: inherit; }
+    .form-group textarea { resize: vertical; min-height: 60px; }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: #D4AF37; box-shadow: 0 0 0 2px rgba(212,175,55,0.2); }
+    .btn { padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 0.9rem; transition: all 0.2s; display: inline-flex; align-items: center; gap: 6px; }
+    .btn svg { width: 16px; height: 16px; }
+    .btn-primary { background: #D4AF37; color: #1A1A2E; }
+    .btn-primary:hover { background: #c9a432; }
+    .btn-success { background: #2E7D32; color: #fff; }
+    .btn-success:hover { background: #256427; }
+    .btn-danger { background: #c62828; color: #fff; }
+    .btn-danger:hover { background: #b71c1c; }
+    .btn-outline { background: transparent; border: 2px solid #ddd; color: #555; }
+    .btn-outline:hover { border-color: #1A1A2E; color: #1A1A2E; }
+    .btn-group { display: flex; gap: 8px; margin-top: 16px; flex-wrap: wrap; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    th { background: #1A1A2E; color: #fff; padding: 12px; text-align: left; font-weight: 600; }
+    td { padding: 10px 12px; border-bottom: 1px solid #eee; }
+    tr:hover { background: #f9f9f5; }
+    .badge-display { display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; font-weight: 600; }
+    .badge-Popular { background: #E3F2FD; color: #1565C0; }
+    .badge-New { background: #E8F5E9; color: #2E7D32; }
+    .badge-Premium { background: #FFF3E0; color: #E65100; }
+    .badge-Best\.Seller { background: #FCE4EC; color: #C62828; }
+    .badge-Best\.Value { background: #F3E5F5; color: #6A1B9A; }
+    .badge-Natural { background: #E8F5E9; color: #1B5E20; }
+    .badge-Spicy { background: #FBE9E7; color: #BF360C; }
+    .stock-true { color: #2E7D32; font-weight: 600; }
+    .stock-false { color: #c62828; font-weight: 600; }
+    .action-btns { display: flex; gap: 6px; }
+    .action-btns button { padding: 6px 10px; border: none; border-radius: 6px; cursor: pointer; background: #eee; }
+    .action-btns button:hover { background: #ddd; }
+    .action-btns .del:hover { background: #ffcdd2; }
+    .search-bar { display: flex; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; align-items: center; }
+    .search-bar input { flex: 1; min-width: 200px; padding: 10px 14px; border: 1px solid #ddd; border-radius: 8px; font-size: 0.95rem; }
+    .search-bar select { padding: 10px 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 0.95rem; }
+    .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-bottom: 20px; }
+    .stat-card { background: #fff; border-radius: 10px; padding: 16px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+    .stat-card .num { font-size: 1.8rem; font-weight: 700; color: #D4AF37; font-family: 'Playfair Display', serif; }
+    .stat-card .label { font-size: 0.8rem; color: #777; margin-top: 4px; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: 1000; align-items: center; justify-content: center; }
+    .modal-overlay.active { display: flex; }
+    .modal { background: #fff; border-radius: 12px; padding: 24px; width: 90%; max-width: 500px; max-height: 90vh; overflow-y: auto; }
+    .modal h3 { margin: 0 0 16px; font-family: 'Playfair Display', serif; }
+    .modal .close-btn { float: right; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #999; }
+    .toast { position: fixed; bottom: 20px; right: 20px; background: #2E7D32; color: #fff; padding: 12px 20px; border-radius: 8px; font-weight: 600; z-index: 2000; display: none; animation: slideUp 0.3s ease; }
+    .toast.show { display: block; }
+    @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+    .import-area { border: 2px dashed #ccc; border-radius: 12px; padding: 30px; text-align: center; color: #777; cursor: pointer; transition: all 0.2s; }
+    .import-area:hover { border-color: #D4AF37; color: #D4AF37; }
+    .import-area.dragover { border-color: #D4AF37; background: rgba(212,175,55,0.05); }
+    @media (max-width: 768px) {
+      .form-grid { grid-template-columns: 1fr; }
+      .admin-header { padding: 16px; }
+      .admin-header h1 { font-size: 1.2rem; }
+      table { font-size: 0.8rem; }
+      td, th { padding: 8px 6px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="admin-wrap">
+    <div class="admin-header">
+      <h1>SamjayHub Admin Panel</h1>
+      <a href="index.html" class="back-link">&larr; Back to Site</a>
+    </div>
+
+    <div class="stats" id="stats">
+      <div class="stat-card"><div class="num" id="statTotal">0</div><div class="label">Total Products</div></div>
+      <div class="stat-card"><div class="num" id="statCosmetics">0</div><div class="label">Cosmetics</div></div>
+      <div class="stat-card"><div class="num" id="statFashion">0</div><div class="label">Fashion</div></div>
+      <div class="stat-card"><div class="num" id="statRabbits">0</div><div class="label">Rabbits</div></div>
+      <div class="stat-card"><div class="num" id="statHomecare">0</div><div class="label">Homecare</div></div>
+      <div class="stat-card"><div class="num" id="statOOS">0</div><div class="label">Out of Stock</div></div>
+    </div>
+
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="products">Products</button>
+      <button class="tab-btn" data-tab="social">Social Media</button>
+      <button class="tab-btn" data-tab="import">Import JSON</button>
+    </div>
+
+    <!-- PRODUCTS TAB -->
+    <div class="tab-panel active" id="tab-products">
+      <div class="card">
+        <h2>Add / Edit Product</h2>
+        <form id="productForm">
+          <input type="hidden" id="editId" value="">
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Product Name *</label>
+              <input type="text" id="pName" required placeholder="e.g. Premium Body Cream">
+            </div>
+            <div class="form-group">
+              <label>Category *</label>
+              <select id="pCategory" required>
+                <option value="cosmetics">Cosmetics & Perfumes</option>
+                <option value="fashion">African Wear</option>
+                <option value="rabbits">Rabbits</option>
+                <option value="homecare">Home Care</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Price (GHS) *</label>
+              <input type="number" id="pPrice" required min="0" step="0.01" placeholder="e.g. 80">
+            </div>
+            <div class="form-group">
+              <label>Badge</label>
+              <select id="pBadge">
+                <option value="">None</option>
+                <option value="Popular">Popular</option>
+                <option value="New">New</option>
+                <option value="Premium">Premium</option>
+                <option value="Best Seller">Best Seller</option>
+                <option value="Best Value">Best Value</option>
+                <option value="Natural">Natural</option>
+                <option value="Spicy">Spicy</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Image Path</label>
+              <input type="text" id="pImg" placeholder="images/cosmetics/perfume/perfume-01.jpg">
+            </div>
+            <div class="form-group">
+              <label>In Stock</label>
+              <select id="pInStock">
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+              </select>
+            </div>
+            <div class="form-group full">
+              <label>Description</label>
+              <textarea id="pDesc" rows="2" placeholder="Short product description"></textarea>
+            </div>
+          </div>
+          <div class="btn-group">
+            <button type="submit" class="btn btn-primary" id="saveBtn">Add Product</button>
+            <button type="button" class="btn btn-outline" id="cancelEdit" style="display:none;">Cancel Edit</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="card">
+        <h2>Product List</h2>
+        <div class="search-bar">
+          <input type="text" id="searchInput" placeholder="Search products...">
+          <select id="filterCategory">
+            <option value="all">All Categories</option>
+            <option value="cosmetics">Cosmetics</option>
+            <option value="fashion">Fashion</option>
+            <option value="rabbits">Rabbits</option>
+            <option value="homecare">Homecare</option>
+          </select>
+        </div>
+        <div style="overflow-x:auto;">
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th>Badge</th>
+                <th>Stock</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="productTable"></tbody>
+          </table>
+        </div>
+        <div class="btn-group" style="margin-top:20px;">
+          <button class="btn btn-success" id="downloadProducts">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download products.json
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- SOCIAL MEDIA TAB -->
+    <div class="tab-panel" id="tab-social">
+      <div class="card">
+        <h2>Social Media & Contact</h2>
+        <form id="socialForm">
+          <div class="form-grid">
+            <div class="form-group">
+              <label>WhatsApp Number</label>
+              <input type="text" id="sWhatsapp" placeholder="233207777324">
+            </div>
+            <div class="form-group">
+              <label>Display Number</label>
+              <input type="text" id="sWhatsappDisplay" placeholder="+233 207 777 324">
+            </div>
+            <div class="form-group">
+              <label>TikTok Handle</label>
+              <input type="text" id="sTiktok" placeholder="@sam.jay45">
+            </div>
+            <div class="form-group">
+              <label>Instagram Handle</label>
+              <input type="text" id="sInstagram" placeholder="@samjayhub">
+            </div>
+            <div class="form-group">
+              <label>Facebook Handle</label>
+              <input type="text" id="sFacebook" placeholder="samjayhub">
+            </div>
+            <div class="form-group">
+              <label>Business Hours</label>
+              <input type="text" id="sHours" placeholder="Monday - Saturday: 8AM - 7PM">
+            </div>
+            <div class="form-group">
+              <label>Location</label>
+              <input type="text" id="sLocation" placeholder="Ghana">
+            </div>
+          </div>
+          <div class="btn-group">
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+          </div>
+        </form>
+      </div>
+      <div class="card">
+        <div class="btn-group">
+          <button class="btn btn-success" id="downloadConfig">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download config.json
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- IMPORT TAB -->
+    <div class="tab-panel" id="tab-import">
+      <div class="card">
+        <h2>Import JSON Files</h2>
+        <p style="color:#777;margin-bottom:16px;">Drag & drop or click to load your existing <code>products.json</code> or <code>config.json</code> files to edit them in the admin panel.</p>
+        <div class="import-area" id="importArea">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="40" height="40"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          <p>Drop JSON files here or click to browse</p>
+          <input type="file" id="fileInput" accept=".json" style="display:none;">
+        </div>
+        <div id="importStatus" style="margin-top:12px;font-weight:600;"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <script src="js/admin.js"></script>
+</body>
+</html>
